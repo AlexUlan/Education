@@ -1,6 +1,8 @@
 import VideoPlayer from "./modules/playVideo";
 import MainSlider from "./modules/slider/slider-main";
 import MiniSlider from "./modules/slider/slider-mini";
+import Difference from "./modules/difference";
+import Form from "./modules/forms";
 
 window.addEventListener("DOMContentLoaded", () => {
   const slider = new MainSlider({ container: ".page", btns: ".next" });
@@ -36,4 +38,13 @@ window.addEventListener("DOMContentLoaded", () => {
     autoplay: true,
   });
   modulesSlider.init();
+
+  new Difference({
+    officerold: ".officerold",
+    officernew: ".officernew",
+    cardSelector: ".officer__card-item",
+  }).init();
+
+  new Form(".form").init();
+
 });
